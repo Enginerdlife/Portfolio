@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alex Chen - Cybersecurity Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>tailwind.config={theme:{extend:{colors:{primary:'#00ff8c',secondary:'#ff00ff'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+    <style>
+        :where([class^="ri-"])::before { content: "\f3c2"; }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a0a0a;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+        
+        .font-mono {
+            font-family: 'JetBrains Mono', monospace;
+        }
+        
+        .matrix-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+        
+        .glitch {
+            position: relative;
+            animation: glitch 1s linear infinite;
+        }
+        
+        @keyframes glitch {
+            2%, 64% { transform: translate(2px, 0) skew(0deg); }
+            4%, 60% { transform: translate(-2px, 0) skew(0deg); }
+            62% { transform: translate(0, 0) skew(5deg); }
+        }
+        
+        .glitch:before,
+        .glitch:after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .glitch:before {
+            left: 2px;
+            text-shadow: -2px 0 #ff00ff;
+            clip: rect(44px, 450px, 56px, 0);
+            animation: glitch-anim 5s infinite linear alternate-reverse;
+        }
+        
+        .glitch:after {
+            left: -2px;
+            text-shadow: -2px 0 #00ff8c;
+            clip: rect(44px, 450px, 56px, 0);
+            animation: glitch-anim2 5s infinite linear alternate-reverse;
+        }
+        
+        @keyframes glitch-anim {
+            0% { clip: rect(31px, 9999px, 94px, 0); }
+            5% { clip: rect(70px, 9999px, 71px, 0); }
+            10% { clip: rect(29px, 9999px, 83px, 0); }
+            15% { clip: rect(2px, 9999px, 13px, 0); }
+            20% { clip: rect(54px, 9999px, 43px, 0); }
+            25% { clip: rect(92px, 9999px, 43px, 0); }
+            30% { clip: rect(82px, 9999px, 69px, 0); }
+            35% { clip: rect(2px, 9999px, 35px, 0); }
+            40% { clip: rect(49px, 9999px, 14px, 0); }
+            45% { clip: rect(55px, 9999px, 56px, 0); }
+            50% { clip: rect(87px, 9999px, 35px, 0); }
+            55% { clip: rect(16px, 9999px, 51px, 0); }
+            60% { clip: rect(32px, 9999px, 16px, 0); }
+            65% { clip: rect(53px, 9999px, 27px, 0); }
+            70% { clip: rect(71px, 9999px, 96px, 0); }
+            75% { clip: rect(10px, 9999px, 78px, 0); }
+            80% { clip: rect(73px, 9999px, 71px, 0); }
+            85% { clip: rect(84px, 9999px, 22px, 0); }
+            90% { clip: rect(67px, 9999px, 42px, 0); }
+            95% { clip: rect(40px, 9999px, 60px, 0); }
+            100% { clip: rect(19px, 9999px, 23px, 0); }
+        }
+        
+        @keyframes glitch-anim2 {
+            0% { clip: rect(65px, 9999px, 100px, 0); }
+            5% { clip: rect(52px, 9999px, 74px, 0); }
+            10% { clip: rect(79px, 9999px, 85px, 0); }
+            15% { clip: rect(75px, 9999px, 5px, 0); }
+            20% { clip: rect(67px, 9999px, 61px, 0); }
+            25% { clip: rect(14px, 9999px, 79px, 0); }
+            30% { clip: rect(1px, 9999px, 66px, 0); }
+            35% { clip: rect(86px, 9999px, 30px, 0); }
+            40% { clip: rect(23px, 9999px, 98px, 0); }
+            45% { clip: rect(85px, 9999px, 72px, 0); }
+            50% { clip: rect(71px, 9999px, 75px, 0); }
+            55% { clip: rect(2px, 9999px, 48px, 0); }
+            60% { clip: rect(30px, 9999px, 16px, 0); }
+            65% { clip: rect(59px, 9999px, 50px, 0); }
+            70% { clip: rect(41px, 9999px, 62px, 0); }
+            75% { clip: rect(2px, 9999px, 82px, 0); }
+            80% { clip: rect(47px, 9999px, 73px, 0); }
+            85% { clip: rect(3px, 9999px, 27px, 0); }
+            90% { clip: rect(26px, 9999px, 55px, 0); }
+            95% { clip: rect(42px, 9999px, 97px, 0); }
+            100% { clip: rect(38px, 9999px, 49px, 0); }
+        }
+        
+        .typewriter {
+            overflow: hidden;
+            border-right: .15em solid #00ff8c;
+            white-space: nowrap;
+            margin: 0 auto;
+            letter-spacing: .15em;
+            animation: typing 3.5s steps(30, end), blink-caret .75s step-end infinite;
+        }
+        
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #00ff8c }
+        }
+        
+        .neon-border {
+            box-shadow: 0 0 5px #00ff8c, 0 0 10px #00ff8c, 0 0 15px #00ff8c;
+            transition: box-shadow 0.3s ease;
+        }
+        
+        .neon-border:hover {
+            box-shadow: 0 0 10px #00ff8c, 0 0 20px #00ff8c, 0 0 30px #00ff8c;
+        }
+        
+        .neon-text {
+            text-shadow: 0 0 5px #00ff8c, 0 0 10px #00ff8c;
+        }
+        
+        .neon-pink {
+            text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff;
+        }
+        
+        .skill-hexagon {
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .skill-hexagon:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 0 15px #00ff8c;
+        }
+        
+        .card-tilt {
+            transition: transform 0.3s ease;
+            transform-style: preserve-3d;
+        }
+        
+        .card-tilt:hover {
+            transform: perspective(1000px) rotateX(5deg) rotateY(5deg);
+        }
+        
+        .project-card {
+            transition: height 0.5s ease, transform 0.3s ease;
+            overflow: hidden;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .project-details {
+            transition: transform 0.5s ease;
+            transform: translateY(100%);
+        }
+        
+        .project-card:hover .project-details {
+            transform: translateY(0);
+        }
+        
+        .scroll-indicator {
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-20px); }
+            60% { transform: translateY(-10px); }
+        }
+        
+        .form-input {
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: border 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .form-input:focus {
+            border: 1px solid #00ff8c;
+            box-shadow: 0 0 10px rgba(0, 255, 140, 0.5);
+            outline: none;
+        }
+        
+        .pulse-button {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(0, 255, 140, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(0, 255, 140, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(0, 255, 140, 0); }
+        }
+        
+        .progress-bar {
+            transition: width 1.5s ease-in-out;
+        }
+        
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+        
+        .particle {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background-color: rgba(0, 255, 140, 0.5);
+            border-radius: 50%;
+        }
+        
+        input[type="checkbox"] {
+            appearance: none;
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 4px;
+            cursor: pointer;
+            position: relative;
+        }
+        
+        input[type="checkbox"]:checked {
+            background-color: #00ff8c;
+            border-color: #00ff8c;
+        }
+        
+        input[type="checkbox"]:checked::after {
+            content: '✓';
+            position: absolute;
+            color: #0a0a0a;
+            font-size: 14px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        .terminal-text {
+            border-right: 0.15em solid #00ff8c;
+            animation: blink-caret 1s step-end infinite;
+        }
+        
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #00ff8c }
+        }
+        
+        .radial-progress {
+            position: relative;
+            width: 100px;
+            height: 100px;
+        }
+        
+        .radial-progress svg {
+            transform: rotate(-90deg);
+        }
+        
+        .radial-progress circle {
+            fill: transparent;
+            stroke-width: 8;
+            stroke-dasharray: 283;
+            transition: stroke-dashoffset 1s ease;
+        }
+        
+        .radial-progress .bg {
+            stroke: rgba(255, 255, 255, 0.1);
+        }
+        
+        .radial-progress .progress {
+            stroke: #00ff8c;
+        }
+        
+        .radial-progress .text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 w-full bg-black bg-opacity-80 backdrop-blur-md z-50 py-4">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <a href="#" class="font-['Pacifico'] text-2xl text-primary">Alex Chen</a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#about" class="hover:text-primary transition-colors duration-300">About</a>
+                <a href="#skills" class="hover:text-primary transition-colors duration-300">Skills</a>
+                <a href="#certifications" class="hover:text-primary transition-colors duration-300">Certifications</a>
+                <a href="#projects" class="hover:text-primary transition-colors duration-300">Projects</a>
+                <a href="#contact" class="hover:text-primary transition-colors duration-300">Contact</a>
+            </div>
+            <button class="md:hidden w-10 h-10 flex items-center justify-center text-white">
+                <i class="ri-menu-line ri-lg"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <canvas id="matrix" class="matrix-bg"></canvas>
+        <div class="container mx-auto px-6 relative z-10 text-center md:text-left">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="w-full md:w-1/2 mb-12 md:mb-0">
+                    <h1 class="text-4xl md:text-6xl font-bold mb-4">
+                        <span class="typewriter">Hi, I'm </span>
+                        <span class="glitch text-primary" data-text="Alex Chen">Alex Chen</span>
+                    </h1>
+                    <h2 class="text-2xl md:text-3xl mb-6 font-mono">Future Cyber Defender</h2>
+                    <p class="text-lg mb-8 text-gray-300 max-w-lg">Passionate about securing digital landscapes and protecting data integrity. Exploring the frontiers of cybersecurity with a focus on ethical hacking and network defense.</p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#projects" class="bg-primary text-black py-3 px-8 !rounded-button font-semibold hover:bg-opacity-80 transition-all duration-300 whitespace-nowrap">View My Work</a>
+                        <a href="#contact" class="bg-transparent border border-primary text-primary py-3 px-8 !rounded-button font-semibold hover:bg-primary hover:bg-opacity-10 transition-all duration-300 whitespace-nowrap">Get In Touch</a>
+                    </div>
+                </div>
+                <div class="w-full md:w-1/2 flex justify-center md:justify-end">
+                    <div class="relative w-80 h-80 bg-black bg-opacity-50 rounded-full overflow-hidden border border-primary neon-border">
+                        <img src="https://public.readdy.ai/ai/img_res/1acde14d504e495304d7cc21e6c0b28c.jpg" alt="Alex Chen" class="w-full h-full object-cover object-top">
+                    </div>
+                </div>
+            </div>
+            <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 scroll-indicator">
+                <i class="ri-arrow-down-line ri-2x text-primary"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section id="about" class="py-20 relative">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold mb-16 text-center">
+                <span class="relative">
+                    About Me
+                    <span class="absolute -bottom-2 left-0 w-full h-1 bg-primary"></span>
+                </span>
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Panel 1: Introduction -->
+                <div class="bg-black bg-opacity-50 p-6 rounded-lg border border-gray-800 hover:border-primary transition-all duration-500 transform hover:-translate-y-2">
+                    <div class="w-12 h-12 flex items-center justify-center bg-primary bg-opacity-20 rounded-full mb-4">
+                        <i class="ri-user-line ri-lg text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 font-mono terminal-text">Personal Profile</h3>
+                    <p class="text-gray-300 mb-4">Cybersecurity student at Stanford University with a background in computer science. Fascinated by the evolving landscape of digital threats and countermeasures.</p>
+                    <p class="text-gray-300">Currently focused on network security protocols and penetration testing methodologies while developing practical skills through hands-on projects.</p>
+                </div>
+                
+                <!-- Panel 2: Education -->
+                <div class="bg-black bg-opacity-50 p-6 rounded-lg border border-gray-800 hover:border-primary transition-all duration-500 transform hover:-translate-y-2">
+                    <div class="w-12 h-12 flex items-center justify-center bg-primary bg-opacity-20 rounded-full mb-4">
+                        <i class="ri-graduation-cap-line ri-lg text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 font-mono terminal-text">Education Timeline</h3>
+                    <div class="relative pl-6 border-l border-gray-700">
+                        <div class="mb-6 relative">
+                            <div class="absolute -left-[25px] w-4 h-4 rounded-full bg-primary"></div>
+                            <h4 class="text-lg font-semibold">Stanford University</h4>
+                            <p class="text-primary">2023 - Present</p>
+                            <p class="text-gray-300">B.S. Computer Science, Cybersecurity Track</p>
+                        </div>
+                        <div class="mb-6 relative">
+                            <div class="absolute -left-[25px] w-4 h-4 rounded-full bg-primary"></div>
+                            <h4 class="text-lg font-semibold">Cyber Defense Workshop</h4>
+                            <p class="text-primary">Summer 2023</p>
+                            <p class="text-gray-300">Intensive 8-week program on network defense</p>
+                        </div>
+                        <div class="relative">
+                            <div class="absolute -left-[25px] w-4 h-4 rounded-full bg-primary"></div>
+                            <h4 class="text-lg font-semibold">Westlake High School</h4>
+                            <p class="text-primary">2019 - 2023</p>
+                            <p class="text-gray-300">Advanced Placement Computer Science</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Panel 3: Passion -->
+                <div class="bg-black bg-opacity-50 p-6 rounded-lg border border-gray-800 hover:border-primary transition-all duration-500 transform hover:-translate-y-2">
+                    <div class="w-12 h-12 flex items-center justify-center bg-primary bg-opacity-20 rounded-full mb-4">
+                        <i class="ri-shield-keyhole-line ri-lg text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 font-mono terminal-text">Why Cybersecurity?</h3>
+                    <p class="text-gray-300 mb-4">My journey began when I discovered a vulnerability in my school's website at age 16. After responsibly reporting it, I was captivated by the ethical power of security knowledge.</p>
+                    <p class="text-gray-300 mb-4">I believe cybersecurity is the frontline of modern defense, protecting not just data but people's livelihoods and privacy in our increasingly connected world.</p>
+                    <p class="text-gray-300">My goal is to specialize in critical infrastructure protection and contribute to making digital spaces safer for everyone.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-black bg-opacity-30 relative">
+        <div class="particles" id="particles-skills"></div>
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold mb-16 text-center">
+                <span class="relative">
+                    Technical Skills
+                    <span class="absolute -bottom-2 left-0 w-full h-1 bg-primary"></span>
+                </span>
+            </h2>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Frontend Skills -->
+                <div class="bg-black bg-opacity-50 p-6 rounded-lg border border-gray-800 hover:border-primary transition-all duration-300">
+                    <div class="w-12 h-12 flex items-center justify-center bg-primary bg-opacity-20 rounded-full mb-4">
+                        <i class="ri-code-s-slash-line ri-lg text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-6 font-mono">Frontend</h3>
+                    
+                    <div class="mb-4">
+                        <div class="flex justify-between mb-1">
+                            <span class="text-gray-300">HTML/CSS</span>
+                            <span class="text-primary">85%</span>
+                        </div>
+                        <div class="w-full bg-gray-800 rounded-full h-2">
+                            <div class="bg-primary h-2 rounded-full progress-bar" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <div class="flex justify-between mb-1">
+                            <span class="text-gray-300">JavaScript</span>
+                            <span class="text-primary">70%</span>
+                        </div>
+                        <div class="w-full bg-gray-800 rounded-full h-2">
+                            <div class="bg-primary h-2 rounded-full progress-bar" style="width: 70%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <div class="flex justify-between mb-1">
+                            <span class="text-gray-300">Responsive Design</span>
+                            <span class="text-primary">75%</span>
+                        </div>
+                        <div class="w-full bg-gray-800 rounded-full h-2">
+                            <div class="bg-primary h-2 rounded-full progress-bar" style="width: 75%"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Version Control -->
+                <div class="bg-black bg-opacity-50 p-6 rounded-lg border border-gray-800 hover:border-primary transition-all duration-300">
+                    <div class="w-12 h-12 flex items-center justify-center bg-primary bg-opacity-20 rounded-full mb-4">
+                        <i class="ri-git-branch-line ri-lg text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-6 font-mono">Version Control</h3>
+                    
+                    <div class="mb-4">
+                        <div class="flex justify-between mb-1">
+                            <span class="text-gray-300">Git</span>
+                            <span class="text-primary">80%</span>
+                        </div>
+                        <div class="w-full bg-gray-800 rounded-full h-2">
+                            <div class="bg-primary h-2 rounded-full progress-bar" style="width: 80%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <div class="flex justify-between mb-1">
+                            <span class="text-gray-300">GitHub</span>
+                            <span class="text-primary">85%</span>
+                        </div>
+                        <div class="w-full bg-gray-800 rounded-full h-2">
+                            <div class="bg-primary h-2 rounded-full progress-bar" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <div class="flex justify-between mb-1">
+                            <span class="text-gray-300">CI/CD Basics</span>
+                            <span class="text-primary">60%</span>
+                        </div>
+                        <div class="w-full bg-gray-800 rounded-full h-2">
+                            <div class="bg-primary h-2 rounded-full progress-bar" style="width: 60%"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Backend Basics -->
+                <div class="bg-black bg-opacity-50 p-6 rounded-lg border border-gray-800 hover:border-primary transition-all duration-300">
+                    <div class="w-12 h-12 flex items-center justify-center bg-primary bg-opacity-20 rounded-full mb-4">
+                        <i class="ri-database-2-line ri-lg text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-6 font-mono">Backend Basics</h3>
+                    
+                    <div class="mb-4">
+                        <div class="flex justify-between mb-1">
+                            <span class="text-gray-300">Python</span>
+                            <span class="text-primary">75%</span>
+                        </div>
+                        <div class="w-full bg-gray-800 rounded-full h-2">
+                            <div class="bg-primary h-2 rounded-full progress-bar" style="width: 75%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <div class="flex justify-between mb-1">
+                            <span class="text-gray-300">SQL</span>
+                            <span class="text-primary">65%</span>
+                        </div>
+                        <div class="w-full bg-gray-800 rounded-full h-2">
+                            <div class="bg-primary h-2 rounded-full progress-bar" style="width: 65%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <div class="flex justify-between mb-1">
+                            <span class="text-gray-300">Node.js</span>
+                            <span class="text-primary">60%</span>
+                        </div>
+                        <div class="w-full bg-gray-800 rounded-full h-2">
+                            <div class="bg-primary h-2 rounded-full progress-bar" style="width: 60%"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Cybersecurity -->
+                <div class="bg-black bg-opacity-50 p-6 rounded-lg border border-gray-800 hover:border-primary transition-all duration-300">
+                    <div class="w-12 h-12 flex items-center justify-center bg-primary bg-opacity-20 rounded-full mb-4">
+                        <i class="ri-shield-check-line ri-lg text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-6 font-mono">Cybersecurity</h3>
+                    
+                    <div class="mb-4">
+                        <div class="flex justify-between mb-1">
+                            <span class="text-gray-300">Network Security</span>
+                            <span class="text-primary">70%</span>
+                        </div>
+                        <div class="w-full bg-gray-800 rounded-full h-2">
+                            <div class="bg-primary h-2 rounded-full progress-bar" style="width: 70%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <div class="flex justify-between mb-1">
+                            <span class="text-gray-300">Penetration Testing</span>
+                            <span class="text-primary">65%</span>
+                        </div>
+                        <div class="w-full bg-gray-800 rounded-full h-2">
+                            <div class="bg-primary h-2 rounded-full progress-bar" style="width: 65%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <div class="flex justify-between mb-1">
+                            <span class="text-gray-300">Cryptography</span>
+                            <span class="text-primary">60%</span>
+                        </div>
+                        <div class="w-full bg-gray-800 rounded-full h-2">
+                            <div class="bg-primary h-2 rounded-full progress-bar" style="width: 60%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-16">
+                <h3 class="text-2xl font-bold mb-8 text-center font-mono">Tools & Technologies</h3>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <span class="px-4 py-2 bg-black bg-opacity-50 border border-primary rounded-full text-primary hover:bg-primary hover:bg-opacity-10 transition-all duration-300">Wireshark</span>
+                    <span class="px-4 py-2 bg-black bg-opacity-50 border border-primary rounded-full text-primary hover:bg-primary hover:bg-opacity-10 transition-all duration-300">Metasploit</span>
+                    <span class="px-4 py-2 bg-black bg-opacity-50 border border-primary rounded-full text-primary hover:bg-primary hover:bg-opacity-10 transition-all duration-300">Kali Linux</span>
+                    <span class="px-4 py-2 bg-black bg-opacity-50 border border-primary rounded-full text-primary hover:bg-primary hover:bg-opacity-10 transition-all duration-300">Burp Suite</span>
+                    <span class="px-4 py-2 bg-black bg-opacity-50 border border-primary rounded-full text-primary hover:bg-primary hover:bg-opacity-10 transition-all duration-300">Nmap</span>
+                    <span class="px-4 py-2 bg-black bg-opacity-50 border border-primary rounded-full text-primary hover:bg-primary hover:bg-opacity-10 transition-all duration-300">Docker</span>
+                    <span class="px-4 py-2 bg-black bg-opacity-50 border border-primary rounded-full text-primary hover:bg-primary hover:bg-opacity-10 transition-all duration-300">AWS</span>
+                    <span class="px-4 py-2 bg-black bg-opacity-50 border border-primary rounded-full text-primary hover:bg-primary hover:bg-opacity-10 transition-all duration-300">OWASP ZAP</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="py-20 relative">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold mb-16 text-center">
+                <span class="relative">
+                    Certifications
+                    <span class="absolute -bottom-2 left-0 w-full h-1 bg-primary"></span>
+                </span>
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Certification 1 -->
+                <div class="card-tilt bg-black bg-opacity-50 p-6 rounded-lg border border-gray-800 hover:border-primary transition-all duration-300">
+                    <div class="w-16 h-16 flex items-center justify-center bg-primary bg-opacity-20 rounded-full mb-6 mx-auto">
+                        <i class="ri-cisco-line ri-2x text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-center glitch" data-text="Cisco Networking">Cisco Networking</h3>
+                    <p class="text-primary text-center mb-4">Completed December 2023</p>
+                    <p class="text-gray-300 text-center">Introduction to Cybersecurity course covering network fundamentals, security principles, and threat detection.</p>
+                    <div class="mt-6 flex justify-center">
+                        <span class="px-4 py-2 bg-black bg-opacity-50 border border-primary rounded-full text-primary text-sm">Credential ID: CSCO-2023-0472</span>
+                    </div>
+                </div>
+                
+                <!-- Certification 2 -->
+                <div class="card-tilt bg-black bg-opacity-50 p-6 rounded-lg border border-gray-800 hover:border-primary transition-all duration-300">
+                    <div class="w-16 h-16 flex items-center justify-center bg-primary bg-opacity-20 rounded-full mb-6 mx-auto">
+                        <i class="ri-coursera-line ri-2x text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-center glitch" data-text="Google Cybersecurity">Google Cybersecurity</h3>
+                    <p class="text-primary text-center mb-4">Completed March 2024</p>
+                    <p class="text-gray-300 text-center">Professional certificate covering security operations, threat detection, incident response, and security frameworks.</p>
+                    <div class="mt-6 flex justify-center">
+                        <span class="px-4 py-2 bg-black bg-opacity-50 border border-primary rounded-full text-primary text-sm">Credential ID: GOOG-CYBER-8291</span>
+                    </div>
+                </div>
+                
+                <!-- Certification 3 -->
+                <div class="card-tilt bg-black bg-opacity-50 p-6 rounded-lg border border-gray-800 hover:border-primary transition-all duration-300">
+                    <div class="w-16 h-16 flex items-center justify-center bg-primary bg-opacity-20 rounded-full mb-6 mx-auto">
+                        <i class="ri-compasses-2-line ri-2x text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-center glitch" data-text="Ethical Hacking">Ethical Hacking</h3>
+                    <p class="text-primary text-center mb-4">Completed January 2024</p>
+                    <p class="text-gray-300 text-center">Fundamentals of ethical hacking including reconnaissance, scanning, exploitation, and post-exploitation techniques.</p>
+                    <div class="mt-6 flex justify-center">
+                        <span class="px-4 py-2 bg-black bg-opacity-50 border border-primary rounded-full text-primary text-sm">Credential ID: ETHACK-2024-1057</span>
+                    </div>
+                </div>
+                
+                <!-- Certification 4 -->
+                <div class="card-tilt bg-black bg-opacity-50 p-6 rounded-lg border border-gray-800 hover:border-primary transition-all duration-300">
+                    <div class="w-16 h-16 flex items-center justify-center bg-primary bg-opacity-20 rounded-full mb-6 mx-auto">
+                        <i class="ri-microsoft-line ri-2x text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-center glitch" data-text="Microsoft Security">Microsoft Security</h3>
+                    <p class="text-primary text-center mb-4">In Progress (Expected May 2024)</p>
+                    <p class="text-gray-300 text-center">Microsoft Security, Compliance, and Identity Fundamentals (SC-900) certification training.</p>
+                    <div class="mt-6 flex justify-center">
+                        <span class="px-4 py-2 bg-black bg-opacity-50 border border-gray-500 rounded-full text-gray-300 text-sm">In Progress</span>
+                    </div>
+                </div>
+                
+                <!-- Certification 5 -->
+                <div class="card-tilt bg-black bg-opacity-50 p-6 rounded-lg border border-gray-800 hover:border-primary transition-all duration-300">
+                    <div class="w-16 h-16 flex items-center justify-center bg-primary bg-opacity-20 rounded-full mb-6 mx-auto">
+                        <i class="ri-code-box-line ri-2x text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-center glitch" data-text="Secure Coding">Secure Coding</h3>
+                    <p class="text-primary text-center mb-4">Completed November 2023</p>
+                    <p class="text-gray-300 text-center">Principles of secure coding practices, vulnerability identification, and secure software development lifecycle.</p>
+                    <div class="mt-6 flex justify-center">
+                        <span class="px-4 py-2 bg-black bg-opacity-50 border border-primary rounded-full text-primary text-sm">Credential ID: SECCODE-2023-6129</span>
+                    </div>
+                </div>
+                
+                <!-- Certification 6 -->
+                <div class="card-tilt bg-black bg-opacity-50 p-6 rounded-lg border border-gray-800 hover:border-primary transition-all duration-300">
+                    <div class="w-16 h-16 flex items-center justify-center bg-primary bg-opacity-20 rounded-full mb-6 mx-auto">
+                        <i class="ri-cloud-line ri-2x text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-center glitch" data-text="Cloud Security">Cloud Security</h3>
+                    <p class="text-primary text-center mb-4">In Progress (Expected June 2024)</p>
+                    <p class="text-gray-300 text-center">AWS Cloud Security Fundamentals covering cloud architecture security, identity management, and compliance.</p>
+                    <div class="mt-6 flex justify-center">
+                        <span class="px-4 py-2 bg-black bg-opacity-50 border border-gray-500 rounded-full text-gray-300 text-sm">In Progress</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-black bg-opacity-30 relative">
+        <div class="particles" id="particles-projects"></div>
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold mb-16 text-center">
+                <span class="relative">
+                    Featured Projects
+                    <span class="absolute -bottom-2 left-0 w-full h-1 bg-primary"></span>
+                </span>
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="project-card bg-black bg-opacity-50 rounded-lg border border-gray-800 hover:border-primary transition-all duration-300 overflow-hidden h-[400px]">
+                    <div class="relative h-full">
+                        <img src="https://public.readdy.ai/ai/img_res/ff31a802eb80aa1a4097607f2f352a1b.jpg" alt="Phishing Simulator" class="w-full h-48 object-cover object-top">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2 text-primary">PhishGuard Simulator</h3>
+                            <p class="text-gray-300 mb-4">An educational phishing simulation tool designed to train users to identify and avoid phishing attempts.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-2 py-1 bg-black bg-opacity-50 text-xs rounded-full border border-primary text-primary">HTML/CSS</span>
+                                <span class="px-2 py-1 bg-black bg-opacity-50 text-xs rounded-full border border-primary text-primary">JavaScript</span>
+                                <span class="px-2 py-1 bg-black bg-opacity-50 text-xs rounded-full border border-primary text-primary">Python</span>
+                                <span class="px-2 py-1 bg-black bg-opacity-50 text-xs rounded-full border border-primary text-primary">Flask</span>
+                            </div>
+                        </div>
+                        <div class="project-details absolute bottom-0 left-0 w-full bg-black bg-opacity-90 p-6">
+                            <p class="text-gray-300 mb-4">Features include customizable email templates, real-time analytics, and educational feedback for users who fall for simulated phishing attempts.</p>
+                            <div class="flex space-x-4">
+                                <a href="#" class="text-primary hover:text-white transition-colors duration-300">
+                                    <i class="ri-github-fill ri-lg"></i> GitHub
+                                </a>
+                                <a href="#" class="text-primary hover:text-white transition-colors duration-300">
+                                    <i class="ri-external-link-line ri-lg"></i> Demo
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="project-card bg-black bg-opacity-50 rounded-lg border border-gray-800 hover:border-primary transition-all duration-300 overflow-hidden h-[400px]">
+                    <div class="relative h-full">
+                        <img src="https://public.readdy.ai/ai/img_res/c47bd71cad87afe990947cd86b32ddfe.jpg" alt="Network Scanner" class="w-full h-48 object-cover object-top">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2 text-primary">NetSentry Scanner</h3>
+                            <p class="text-gray-300 mb-4">A basic network vulnerability scanner that identifies open ports and potential security weaknesses.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-2 py-1 bg-black bg-opacity-50 text-xs rounded-full border border-primary text-primary">Python</span>
+                                <span class="px-2 py-1 bg-black bg-opacity-50 text-xs rounded-full border border-primary text-primary">Scapy</span>
+                                <span class="px-2 py-1 bg-black bg-opacity-50 text-xs rounded-full border border-primary text-primary">React</span>
+                                <span class="px-2 py-1 bg-black bg-opacity-50 text-xs rounded-full border border-primary text-primary">D3.js</span>
+                            </div>
+                        </div>
+                        <div class="project-details absolute bottom-0 left-0 w-full bg-black bg-opacity-90 p-6">
+                            <p class="text-gray-300 mb-4">Includes network topology visualization, automated scanning schedules, and detailed vulnerability reports with remediation suggestions.</p>
+                            <div class="flex space-x-4">
+                                <a href="#" class="text-primary hover:text-white transition-colors duration-300">
+                                    <i class="ri-github-fill ri-lg"></i> GitHub
+                                </a>
+                                <a href="#" class="text-primary hover:text-white transition-colors duration-300">
+                                    <i class="ri-external-link-line ri-lg"></i> Demo
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="project-card bg-black bg-opacity-50 rounded-lg border border-gray-800 hover:border-primary transition-all duration-300 overflow-hidden h-[400px]">
+                    <div class="relative h-full">
+                        <img src="https://public.readdy.ai/ai/img_res/3a14fdb4917c7444d403cce1f4af9c4b.jpg" alt="Password Analyzer" class="w-full h-48 object-cover object-top">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2 text-primary">PassStrength Analyzer</h3>
+                            <p class="text-gray-300 mb-4">A password strength analysis tool that evaluates entropy and resistance to various cracking methods.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-2 py-1 bg-black bg-opacity-50 text-xs rounded-full border border-primary text-primary">JavaScript</span>
+                                <span class="px-2 py-1 bg-black bg-opacity-50 text-xs rounded-full border border-primary text-primary">HTML/CSS</span>
+                                <span class="px-2 py-1 bg-black bg-opacity-50 text-xs rounded-full border border-primary text-primary">Web Crypto API</span>
+                                <span class="px-2 py-1 bg-black bg-opacity-50 text-xs rounded-full border border-primary text-primary">Chart.js</span>
+                            </div>
+                        </div>
+                        <div class="project-details absolute bottom-0 left-0 w-full bg-black bg-opacity-90 p-6">
+                            <p class="text-gray-300 mb-4">Features include real-time strength assessment, visual entropy representation, time-to-crack estimations, and secure password generation suggestions.</p>
+                            <div class="flex space-x-4">
+                                <a href="#" class="text-primary hover:text-white transition-colors duration-300">
+                                    <i class="ri-github-fill ri-lg"></i> GitHub
+                                </a>
+                                <a href="#" class="text-primary hover:text-white transition-colors duration-300">
+                                    <i class="ri-external-link-line ri-lg"></i> Demo
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center">
+                <a href="#" class="inline-block bg-transparent border border-primary text-primary py-3 px-8 !rounded-button font-semibold hover:bg-primary hover:bg-opacity-10 transition-all duration-300 whitespace-nowrap">View All Projects</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 relative">
+        <div class="particles" id="particles-contact"></div>
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold mb-16 text-center">
+                <span class="relative">
+                    Get In Touch
+                    <span class="absolute -bottom-2 left-0 w-full h-1 bg-primary"></span>
+                </span>
+            </h2>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Contact Form -->
+                <div class="bg-black bg-opacity-50 p-8 rounded-lg border border-gray-800">
+                    <h3 class="text-2xl font-bold mb-6 font-mono terminal-text">Send Me a Message</h3>
+                    <form>
+                        <div class="mb-6 relative">
+                            <input type="text" id="name" class="form-input w-full py-3 px-4 bg-black bg-opacity-50 text-white rounded border-none focus:ring-2 focus:ring-primary" placeholder=" " required>
+                            <label for="name" class="absolute text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-black bg-opacity-50 px-2 peer-focus:px-2 peer-focus:text-primary peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1">Your Name</label>
+                        </div>
+                        
+                        <div class="mb-6 relative">
+                            <input type="email" id="email" class="form-input w-full py-3 px-4 bg-black bg-opacity-50 text-white rounded border-none focus:ring-2 focus:ring-primary" placeholder=" " required>
+                            <label for="email" class="absolute text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-black bg-opacity-50 px-2 peer-focus:px-2 peer-focus:text-primary peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1">Your Email</label>
+                        </div>
+                        
+                        <div class="mb-6 relative">
+                            <input type="text" id="subject" class="form-input w-full py-3 px-4 bg-black bg-opacity-50 text-white rounded border-none focus:ring-2 focus:ring-primary" placeholder=" " required>
+                            <label for="subject" class="absolute text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-black bg-opacity-50 px-2 peer-focus:px-2 peer-focus:text-primary peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1">Subject</label>
+                        </div>
+                        
+                        <div class="mb-6 relative">
+                            <textarea id="message" rows="5" class="form-input w-full py-3 px-4 bg-black bg-opacity-50 text-white rounded border-none focus:ring-2 focus:ring-primary" placeholder=" " required></textarea>
+                            <label for="message" class="absolute text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-black bg-opacity-50 px-2 peer-focus:px-2 peer-focus:text-primary peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-6 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1">Your Message</label>
+                        </div>
+                        
+                        <div class="mb-6 flex items-center">
+                            <input type="checkbox" id="consent" class="mr-3" required>
+                            <label for="consent" class="text-gray-300 text-sm">I consent to having my information stored for contact purposes.</label>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-primary text-black py-3 px-8 !rounded-button font-semibold hover:bg-opacity-80 transition-all duration-300 pulse-button whitespace-nowrap">Send Message</button>
+                    </form>
+                </div>
+                
+                <!-- Contact Info -->
+                <div>
+                    <div class="bg-black bg-opacity-50 p-8 rounded-lg border border-gray-800 mb-8">
+                        <h3 class="text-2xl font-bold mb-6 font-mono terminal-text">Contact Information</h3>
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 flex items-center justify-center bg-primary bg-opacity-20 rounded-full mr-4">
+                                    <i class="ri-mail-line ri-lg text-primary"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-semibold mb-1">Email</h4>
+                                    <p class="text-gray-300">alex.chen@stanford.edu</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 flex items-center justify-center bg-primary bg-opacity-20 rounded-full mr-4">
+                                    <i class="ri-map-pin-line ri-lg text-primary"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-semibold mb-1">Location</h4>
+                                    <p class="text-gray-300">Stanford, California, USA</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 flex items-center justify-center bg-primary bg-opacity-20 rounded-full mr-4">
+                                    <i class="ri-time-line ri-lg text-primary"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-semibold mb-1">Availability</h4>
+                                    <p class="text-gray-300">Weekdays: 9am - 5pm (PST)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-black bg-opacity-50 p-8 rounded-lg border border-gray-800">
+                        <h3 class="text-2xl font-bold mb-6 font-mono terminal-text">Connect With Me</h3>
+                        <div class="flex space-x-4">
+                            <a href="#" class="w-12 h-12 flex items-center justify-center bg-primary bg-opacity-20 rounded-full text-primary hover:bg-primary hover:text-black transition-all duration-300">
+                                <i class="ri-linkedin-fill ri-lg"></i>
+                            </a>
+                            <a href="#" class="w-12 h-12 flex items-center justify-center bg-primary bg-opacity-20 rounded-full text-primary hover:bg-primary hover:text-black transition-all duration-300">
+                                <i class="ri-github-fill ri-lg"></i>
+                            </a>
+                            <a href="#" class="w-12 h-12 flex items-center justify-center bg-primary bg-opacity-20 rounded-full text-primary hover:bg-primary hover:text-black transition-all duration-300">
+                                <i class="ri-twitter-x-fill ri-lg"></i>
+                            </a>
+                            <a href="#" class="w-12 h-12 flex items-center justify-center bg-primary bg-opacity-20 rounded-full text-primary hover:bg-primary hover:text-black transition-all duration-300">
+                                <i class="ri-medium-fill ri-lg"></i>
+                            </a>
+                        </div>
+                        
+                        <div class="mt-8">
+                            <h4 class="text-lg font-semibold mb-4">Current Status</h4>
+                            <div class="flex items-center p-4 bg-black bg-opacity-70 rounded-lg border border-primary">
+                                <div class="w-3 h-3 bg-green-500 rounded-full mr-3 animate-pulse"></div>
+                                <p class="text-primary">Available for internship opportunities (Summer 2024)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="py-8 bg-black bg-opacity-80 border-t border-gray-800">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <a href="#" class="font-['Pacifico'] text-2xl text-primary">Alex Chen</a>
+                    <p class="text-gray-400 mt-2">Cybersecurity Student & Developer</p>
+                </div>
+                
+                <div class="flex flex-col items-center md:items-end">
+                    <p class="text-gray-400 mb-2">© 2024 All Rights Reserved</p>
+                    <p class="text-gray-500 text-sm">Last updated: April 10, 2025</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Matrix Rain Effect
+        const canvas = document.getElementById('matrix');
+        const ctx = canvas.getContext('2d');
+        
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        
+        const katakana = 'アァカサタナハマヤャラワガザダバパイィキシチニヒミリヰギジヂビピウゥクスツヌフムユュルグズブヅプエェケセテネヘメレヱゲゼデベペオォコソトノホモヨョロヲゴゾドボポヴッン';
+        const latin = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        const nums = '0123456789';
+        const cyberSymbols = '{}[]()<>?|*&^%$#@!~';
+        
+        const alphabet = katakana + latin + nums + cyberSymbols;
+        
+        const fontSize = 16;
+        const columns = canvas.width/fontSize;
+        
+        const rainDrops = [];
+        
+        for(let x = 0; x < columns; x++) {
+            rainDrops[x] = 1;
+        }
+        
+        const draw = () => {
+            ctx.fillStyle = 'rgba(10, 10, 10, 0.05)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            
+            ctx.fillStyle = '#00ff8c';
+            ctx.font = fontSize + 'px monospace';
+            
+            for(let i = 0; i < rainDrops.length; i++) {
+                const text = alphabet.charAt(Math.floor(Math.random() * alphabet.length));
+                ctx.fillText(text, i*fontSize, rainDrops[i]*fontSize);
+                
+                if(rainDrops[i]*fontSize > canvas.height && Math.random() > 0.975) {
+                    rainDrops[i] = 0;
+                }
+                rainDrops[i]++;
+            }
+        };
+        
+        setInterval(draw, 30);
+        
+        // Particle Effect
+        function createParticles(containerId, count) {
+            const container = document.getElementById(containerId);
+            if (!container) return;
+            
+            for (let i = 0; i < count; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                
+                // Random position
+                const posX = Math.random() * 100;
+                const posY = Math.random() * 100;
+                
+                // Random size
+                const size = Math.random() * 3 + 1;
+                
+                // Random opacity
+                const opacity = Math.random() * 0.5 + 0.1;
+                
+                // Set styles
+                particle.style.left = `${posX}%`;
+                particle.style.top = `${posY}%`;
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                particle.style.opacity = opacity;
+                
+                // Add animation
+                const duration = Math.random() * 20 + 10;
+                particle.style.animation = `float ${duration}s linear infinite`;
+                
+                container.appendChild(particle);
+            }
+        }
+        
+        // Create particles for different sections
+        createParticles('particles-skills', 50);
+        createParticles('particles-projects', 50);
+        createParticles('particles-contact', 50);
+        
+        // Animate elements on scroll
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.progress-bar');
+            
+            elements.forEach(element => {
+                const position = element.getBoundingClientRect();
+                
+                // Check if element is in viewport
+                if(position.top < window.innerHeight && position.bottom >= 0) {
+                    element.style.width = element.getAttribute('data-width') || '0%';
+                }
+            });
+        };
+        
+        window.addEventListener('scroll', animateOnScroll);
+        
+        // Initialize animations on load
+        document.addEventListener('DOMContentLoaded', () => {
+            // Set initial width to 0
+            const progressBars = document.querySelectorAll('.progress-bar');
+            progressBars.forEach(bar => {
+                const width = bar.style.width;
+                bar.setAttribute('data-width', width);
+                bar.style.width = '0%';
+            });
+            
+            // Trigger animation
+            setTimeout(animateOnScroll, 500);
+        });
+        
+        // Easter egg in console
+        console.log("%c👨‍💻 Hello, fellow developer! 👨‍💻", "color: #00ff8c; font-size: 20px; font-weight: bold;");
+        console.log("%cThanks for checking out my portfolio's code.", "color: #ff00ff; font-size: 14px;");
+        console.log("%cFeel free to connect with me for cybersecurity projects or discussions!", "color: white; font-size: 14px;");
+    </script>
+</body>
+</html>
